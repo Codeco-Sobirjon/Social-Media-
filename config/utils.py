@@ -26,6 +26,7 @@ class TimestampField(serializers.IntegerField):
     def to_representation(self, value) -> int:
         return int(value.timestamp())
 
+
 PAGINATION_PARAMETERS = [
     OpenApiParameter(
         'page', type=OpenApiTypes.INT, location=OpenApiParameter.QUERY,

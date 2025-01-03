@@ -1,16 +1,14 @@
-from decouple import config
+from config.settings.base import *
 
-DEBUG = False
-
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
+DEBUG = True
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT', default=5432, cast=int),
+        'NAME': 'social',
+        'USER': 'postgres',
+        'PASSWORD': '0576',
+        "HOST": "localhost",
+        "PORT": 5432,
     }
 }

@@ -1,11 +1,12 @@
 import os
 from datetime import timedelta
 from pathlib import Path
-from decouple import config
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = "hello-social"
+
+ALLOWED_HOSTS = ['*']
 
 LOCAL_APPS = [
     'apps.accounts.apps.AccountsConfig',
@@ -102,7 +103,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
 
-OPENAI_API_KEY = config('OPENAI_API_KEY')
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
